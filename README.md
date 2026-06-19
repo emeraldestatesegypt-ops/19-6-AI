@@ -54,9 +54,10 @@ A clean, minimal AI chat application powered by OpenAI. Get up and running with 
 ## Project Structure
 
 ```
-├── index.html      # Chat interface
-├── style.css       # Styles
-├── app.js          # Frontend JavaScript
+├── public/
+│   ├── index.html  # Chat interface
+│   ├── style.css   # Styles
+│   └── app.js      # Frontend JavaScript
 ├── server.js       # Express server & OpenAI proxy
 ├── package.json    # Node.js project metadata
 ├── .env.example    # Environment variable template
@@ -67,9 +68,9 @@ A clean, minimal AI chat application powered by OpenAI. Get up and running with 
 
 - The frontend (`app.js`) sends chat messages to `/api/chat` on the local server.
 - The server (`server.js`) forwards the conversation history to the OpenAI Chat Completions API using your server-side API key.
-- Replies are streamed back to the browser and displayed in the chat UI.
+- Replies are returned to the browser as a single JSON payload and displayed in the chat UI.
 
-## Customisation
+## Customization
 
 | Setting | Location | Default |
 |---|---|---|

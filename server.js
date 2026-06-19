@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(join(__dirname, 'public')));
 
 app.post('/api/chat', async (req, res) => {
   const { messages } = req.body;
